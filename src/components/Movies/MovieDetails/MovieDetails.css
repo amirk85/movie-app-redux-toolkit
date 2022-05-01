@@ -1,0 +1,17 @@
+.movie_section {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 40px 20px;
+  font-weight: 400;
+}
+
+.movie_title {
+  font-size: 2rem;
+  word-wrap: break-word;
+  margin-bottom: 1rem;
+}
+
+.movie_rating {
+  font-size: 1.3rem;
+  
+}
