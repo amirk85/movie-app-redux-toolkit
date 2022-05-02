@@ -2,21 +2,23 @@ import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import PageNotFound from "./components/Error/PageNotFound";
 import Footer from "./components/Footer/Footer";
-import MainHeader from "./components/MainHeader/MainHeader";
-import MovieDetails from "./components/Movies/MovieDetails/MovieDetails";
+// import MovieDetails from "./components/Movies/MovieDetails/MovieDetails";
+import NavBar from "./components/NavBar/NavBar";
 import Home from "./components/Pages/Home/Home";
 import WatchList from "./components/Pages/WatchList/WatchList";
-import ShowDetails from "./components/Series/ShowDetails";
+import Seasons from "./components/Season/Seasons";
+import CardDetails from "./components/shared/CardDetails";
+// import ShowDetails from "./components/Shows/ShowDetails";
 
 export default function Router() {
   return (
     <BrowserRouter>
-      <MainHeader />
+      <NavBar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/watchlist" element={<WatchList />} />
-        <Route path="/movie/:id" element={<MovieDetails />} />
-        <Route path="/show/:id" element={<ShowDetails />} />
+        <Route path="/:id" element={<CardDetails />} />
+        <Route path="/season" element={<Seasons />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
       <Footer />

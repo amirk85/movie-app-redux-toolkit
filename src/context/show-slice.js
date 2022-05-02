@@ -14,12 +14,23 @@ export const getAllShowsAsync = createAsyncThunk(
   }
 );
 
+export const getSearchedShowsAsync = createAsyncThunk(
+  "shows/getSearchedShowsAsync",
+  async (input) => {
+    const { data } = await axios.get(`${BASE_URL}s=${input}&type=series`);
+    return data.Search;
+  }
+);
+
 const showSlice = createSlice({
   name: "shows",
   initialState,
   reducers: {},
   extraReducers: {
     [getAllShowsAsync.fulfilled](state, { payload }) {
+      state.showsData = payload;
+    },
+    [getSearchedShowsAsync.fulfilled](state, { payload }) {
       state.showsData = payload;
     },
   },

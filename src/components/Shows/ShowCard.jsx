@@ -4,17 +4,15 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import CardActionArea from "@mui/material/CardActionArea";
-import "./MovieCard.css";
 import { Link } from "react-router-dom";
 
-export default function MovieCard({ movie }) {
-  const { Poster, Title, Year, imdbID } = movie;
-
+export default function ShowCard({ show }) {
+  const { Poster, Title, Year, imdbID } = show;
   return (
     <Link to={`/${imdbID}`}>
       <Card className="card_container" sx={{ maxWidth: 345 }}>
         <CardActionArea>
-          <CardMedia component="img" height="550" image={Poster} alt={Title} />
+          <CardMedia component="img" height="450" image={Poster} alt={Title} />
           <CardContent>
             <Typography gutterBottom variant="h5" component="div">
               {Title}

@@ -4,7 +4,6 @@ import { BASE_URL } from "../APIs/MovieAPI";
 
 const initialState = {
   moviesData: [],
-  movieDetail: {},
 };
 
 export const getAllMoviesAsync = createAsyncThunk(
@@ -15,11 +14,11 @@ export const getAllMoviesAsync = createAsyncThunk(
   }
 );
 
-export const getMovieDetailsAsync = createAsyncThunk(
-  "movies/getMovieDetailsAsync",
-  async (id) => {
-    const { data } = await axios.get(`${BASE_URL}i=${id}&Plot=full`);
-    return data;
+export const getSearchedMoviesAsync = createAsyncThunk(
+  "movies/getSearchedMoviesAsync",
+  async (input) => {
+    const { data } = await axios.get(`${BASE_URL}s=${input}&type=movie`);
+    return data.Search;
   }
 );
 
@@ -31,12 +30,12 @@ const movieSlice = createSlice({
     [getAllMoviesAsync.fulfilled](state, { payload }) {
       state.moviesData = payload;
     },
-    [getMovieDetailsAsync.fulfilled](state, { payload }) {
-      return { ...state, movieDetail: payload };
+
+    [getSearchedMoviesAsync.fulfilled](state, { payload }) {
+      state.moviesData = payload;
     },
   },
 });
 
-// export const { GET_ALL_MOVIES } = movieSlice.actions;
 export const MOVIES_DATA = (state) => state.movies.moviesData;
 export default movieSlice.reducer;

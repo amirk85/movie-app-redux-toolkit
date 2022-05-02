@@ -1,6 +1,6 @@
 .movie_section {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   padding: 40px 20px;
   font-weight: 400;
 }
@@ -13,5 +13,4 @@
 
 .movie_rating {
   font-size: 1.3rem;
-  
 }

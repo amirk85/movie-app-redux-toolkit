@@ -1,6 +1,6 @@
 import React from "react";
-import MovieList from "../../Movies/MovieList/MovieList";
-import SeriesList from "../../Series/ShowList";
+import MovieList from "../../Movies/MovieList";
+import SeriesList from "../../Shows/ShowList";
 
 export default function Home() {
   return (
