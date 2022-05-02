@@ -27,15 +27,15 @@ export default function CardDetails() {
   } = cardDetails;
 
   const dispatch = useDispatch();
-  const { id } = useParams();
+  const { cardId } = useParams();
 
   useEffect(() => {
-    dispatch(getCardDetailsAsync(id));
-    dispatch(getSeasonsAsync(id));
+    dispatch(getCardDetailsAsync(cardId));
+    dispatch(getSeasonsAsync(cardId));
     return () => {
       dispatch(REMOVE_CARD_DETAIL());
     };
-  }, [dispatch, id]);
+  }, [dispatch, cardId]);
 
   return (
     <div>

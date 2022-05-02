@@ -1,10 +1,9 @@
 import * as React from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
-
 import SearchBox from "./SearchBox/SearchBox";
-
 import "./NavBar.css";
+
 export default function NavBar() {
   return (
     <Navbar bg="danger" expand="lg">

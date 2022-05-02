@@ -7,7 +7,6 @@ import ShowCard from "./ShowCard";
 
 export default function ShowList() {
   const showsData = useSelector(SHOW_DATA);
-
   const dispatch = useDispatch();
 
   useEffect(() => {
