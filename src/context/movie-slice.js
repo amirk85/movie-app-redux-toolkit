@@ -9,7 +9,7 @@ const initialState = {
 export const getAllMoviesAsync = createAsyncThunk(
   "movies/getAllMoviesAsync",
   async () => {
-    const { data } = await axios.get(`${BASE_URL}s=Harry&type=movie`);
+    const { data } = await axios.get(`${BASE_URL}s=Avengers&type=movie`);
     return data.Search;
   }
 );
