@@ -1,7 +1,7 @@
 import Box from "@mui/material/Box";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getAllShowsAsync, SHOW_DATA } from "../../context/show-slice";
+import { getAllShowsAsync, SHOW_DATA } from "../../store/show-slice";
 import { v4 as uuidv4 } from "uuid";
 import ShowCard from "./ShowCard";
 

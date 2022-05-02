@@ -4,8 +4,8 @@ import { Form, FormControl } from "react-bootstrap";
 import SearchIcon from "@mui/icons-material/Search";
 import "./SearchBox.css";
 import { useDispatch } from "react-redux";
-import { getSearchedMoviesAsync } from "../../../context/movie-slice";
-import { getSearchedShowsAsync } from "../../../context/show-slice";
+import { getSearchedMoviesAsync } from "../../../store/movie-slice";
+import { getSearchedShowsAsync } from "../../../store/show-slice";
 
 export default function SearchBox() {
   const [input, setInput] = React.useState("");

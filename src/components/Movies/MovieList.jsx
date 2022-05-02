@@ -1,7 +1,7 @@
 import Box from "@mui/system/Box";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getAllMoviesAsync, MOVIES_DATA } from "../../context/movie-slice";
+import { getAllMoviesAsync, MOVIES_DATA } from "../../store/movie-slice";
 import MovieCard from "./MovieCard/MovieCard";
 import { v4 as uuidv4 } from "uuid";
 

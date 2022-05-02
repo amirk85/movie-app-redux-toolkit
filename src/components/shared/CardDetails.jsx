@@ -9,7 +9,7 @@ import {
   getCardDetailsAsync,
   getSeasonsAsync,
   REMOVE_CARD_DETAIL,
-} from "../../context/global-slice";
+} from "../../store/global-slice";
 
 export default function CardDetails() {
   const cardDetails = useSelector((state) => state.global.cardDetails);
