@@ -11,7 +11,7 @@ export default function MovieCard({ movie }) {
   const { Poster, Title, Year, imdbID } = movie;
 
   return (
-    <Link to={`/${imdbID}`}>
+    <Link to={`/movie/${imdbID}`}>
       <Card className="card_container" sx={{ maxWidth: 345 }}>
         <CardActionArea>
           <CardMedia component="img" height="550" image={Poster} alt={Title} />

@@ -6,15 +6,18 @@ import "./SearchBox.css";
 import { useDispatch } from "react-redux";
 import { getSearchedMoviesAsync } from "../../../store/movie-slice";
 import { getSearchedShowsAsync } from "../../../store/show-slice";
+import { useNavigate } from "react-router-dom";
 
 export default function SearchBox() {
   const [input, setInput] = React.useState("");
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   function submitHandler(e) {
     e.preventDefault();
     dispatch(getSearchedMoviesAsync(input));
     dispatch(getSearchedShowsAsync(input));
+    navigate("/", { replace: true });
     setInput("");
   }
 

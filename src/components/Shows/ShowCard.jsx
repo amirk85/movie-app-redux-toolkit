@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 export default function ShowCard({ show }) {
   const { Poster, Title, Year, imdbID } = show;
   return (
-    <Link to={`/${imdbID}`}>
+    <Link to={`/show/${imdbID}`}>
       <Card className="card_container" sx={{ maxWidth: 345 }}>
         <CardActionArea>
           <CardMedia component="img" height="450" image={Poster} alt={Title} />

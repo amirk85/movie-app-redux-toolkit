@@ -1,17 +1,17 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, Outlet } from "react-router-dom";
 import ThumbUpAltIcon from "@mui/icons-material/ThumbUpAlt";
 import MovieIcon from "@mui/icons-material/Movie";
 import StarIcon from "@mui/icons-material/Star";
-import "./CardDetails.css";
+import "./ShowDetails.css";
 import {
   getCardDetailsAsync,
   getSeasonsAsync,
   REMOVE_CARD_DETAIL,
-} from "../../store/global-slice";
+} from "../../../store/global-slice";
 
-export default function CardDetails() {
+export default function ShowDetails() {
   const cardDetails = useSelector((state) => state.global.cardDetails);
 
   const {
@@ -45,9 +45,10 @@ export default function CardDetails() {
         <div className="movie_section">
           <div className="section_left">
             <div className="movie_title">{Title}</div>
-            <Link to="/season" className="movie_title">
+            <Link to="season" className="movie_title">
               Seasons
             </Link>
+            <Outlet />
             <div className="movie_rating">
               <span>
                 IMDB Rating <StarIcon /> : {imdbRating}
