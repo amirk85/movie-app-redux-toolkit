@@ -14,9 +14,11 @@ a {
 
 .active {
   font-weight: 500;
-  color: #221f1f;
+  /* color: #221f1f; */
+  color: #ffc4c4;
+  border-bottom: 3px solid #ffc4c4;
 }
 
 .nav_link:hover {
-  color: #221f1f;
+  color: #ffc4c4;
 }
